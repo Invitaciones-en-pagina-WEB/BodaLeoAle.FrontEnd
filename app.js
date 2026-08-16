@@ -89,7 +89,6 @@ function renderInvitation() {
   errorState.classList.add("hidden");
 
   familyName.textContent = invitation.nombre || "Invitados especiales";
-  //invitationCode.textContent = `Código: ${invitation.codigo}`;
 
   const invitados = Array.isArray(invitation.invitados)
     ? invitation.invitados
