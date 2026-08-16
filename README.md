@@ -1,4 +1,5 @@
-# Invitación Ale & Leo
+<<<<<<< HEAD
+# BodaLeoAle.FrontEnd
 
 Frontend responsive en HTML, CSS y JavaScript conectado a:
 `https://bodaleoale-backend.onrender.com/api`
@@ -12,3 +13,7 @@ En GitHub Pages puedes usar:
 `https://TU-USUARIO.github.io/TU-REPO/?codigo=SEI002`
 
 La página lee el código, consulta `/api/invitacion/:codigo` y envía la respuesta a `/api/confirmar`.
+=======
+# BodaLeoAle.FrontEnd
+Invitacion de Boda de Leonel y Alejandra
+>>>>>>> 969f84e6737914844499ee940cc7cdccf0fa706f
