@@ -10,7 +10,7 @@ const answeredMessage = $("#answeredMessage");
 const rsvpForm = $("#rsvpForm");
 const successState = $("#successState");
 const familyName = $("#familyName");
-const invitationCode = $("#invitationCode");
+const invitationCode = document.getElementById("invitationCode");
 const guestSection = $("#guestSection");
 const guestList = $("#guestList");
 const selectedCount = $("#selectedCount");
@@ -89,7 +89,7 @@ function renderInvitation() {
   errorState.classList.add("hidden");
 
   familyName.textContent = invitation.nombre || "Invitados especiales";
-  invitationCode.textContent = `Código: ${invitation.codigo}`;
+  //invitationCode.textContent = `Código: ${invitation.codigo}`;
 
   const invitados = Array.isArray(invitation.invitados)
     ? invitation.invitados
