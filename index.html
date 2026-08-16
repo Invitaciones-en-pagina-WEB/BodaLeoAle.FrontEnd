@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2C331E" />
+  <meta name="description" content="Invitación de boda de Ale & Leo" />
+  <title>Ale & Leo | 04.12.2026</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="invitation-page">
+    <section class="invitation-layout">
+      <div class="save-date-panel" aria-label="Save the date Ale y Leo">
+        <img src="assets/save-the-date.png" alt="Save the Date de Ale y Leo, 4 de diciembre de 2026" />
+      </div>
+
+      <section class="rsvp-panel" aria-labelledby="rsvpTitle">
+        <div class="rsvp-panel__inner">
+          <p class="eyebrow">CONFIRMACIÓN DE ASISTENCIA</p>
+          <h1 id="rsvpTitle">Acompañanos</h1>
+          <p class="rsvp-intro">Nos gustaria contar con tu presencia, porfavor confirma su asistencia en este 
+            enlace antes del 15 de octubre 2026
+          </p>
+
+          <div id="loadingState" class="state-card">
+            <span class="spinner" aria-hidden="true"></span>
+            <div>
+              <strong>Buscando tu invitación…</strong>
+              <p>Estamos cargando los datos de tu familia.</p>
+            </div>
+          </div>
+
+          <div id="errorState" class="state-card state-card--error hidden" role="alert">
+            <span class="state-icon">!</span>
+            <div>
+              <strong>No pudimos encontrar tu invitación</strong>
+              <p id="errorMessage"></p>
+            </div>
+          </div>
+
+          <div id="alreadyAnswered" class="state-card state-card--success hidden">
+            <span class="state-icon">✓</span>
+            <div>
+              <strong>Tu respuesta ya fue registrada</strong>
+              <p id="answeredMessage"></p>
+            </div>
+          </div>
+
+          <form id="rsvpForm" class="rsvp-form hidden" novalidate>
+            <div class="guest-heading">
+              <span>Invitación para</span>
+              <strong id="familyName">Invitados</strong>
+              <small id="invitationCode"></small>
+            </div>
+
+            <fieldset class="form-group">
+              <legend>¿Confirmas tu asistencia?</legend>
+
+              <label class="attendance-card">
+                <input type="radio" name="confirmacion" value="true" />
+                <span class="custom-radio"></span>
+                <span>
+                  <strong>Sí, confirmo mi asistencia</strong>
+                  <small>Nos encantará celebrar juntos.</small>
+                </span>
+              </label>
+
+              <label class="attendance-card">
+                <input type="radio" name="confirmacion" value="false" />
+                <span class="custom-radio"></span>
+                <span>
+                  <strong>En esta ocasión no podremos acompañarlos</strong>
+                  <small>Gracias por hacérnoslo saber.</small>
+                </span>
+              </label>
+
+              <p id="attendanceError" class="field-error hidden">Selecciona una opción para continuar.</p>
+            </fieldset>
+
+            <fieldset id="guestSection" class="form-group guest-section hidden">
+              <div class="guest-section__title">
+                <div>
+                  <legend>¿Quiénes asistirán?</legend>
+                  <p>Selecciona a las personas que nos acompañarán.</p>
+                </div>
+                <span class="counter"><b id="selectedCount">0</b>/<span id="maxGuests">0</span></span>
+              </div>
+
+              <div id="guestList" class="guest-list"></div>
+              <p id="guestError" class="field-error hidden"></p>
+            </fieldset>
+
+            <button id="submitButton" class="submit-button" type="submit">
+              <span>Confirmar respuesta</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div id="successState" class="success-card hidden" aria-live="polite">
+            <div class="success-mark">✓</div>
+            <h2 id="successTitle">¡Gracias por responder!</h2>
+            <p id="successMessage"></p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
